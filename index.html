@@ -361,6 +361,29 @@
     </div>
 
     <script>
+            // svg home
+        const homeButton = document.querySelector('.home-button');
+        
+        homeButton.addEventListener('mouseenter', () => {
+            homeButton.style.animation = 'pulse 1s infinite';
+        });
+
+        homeButton.addEventListener('mouseleave', () => {
+            homeButton.style.animation = 'none';
+            void homeButton.offsetWidth;
+        });
+
+        homeButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.95)';
+            
+            // إضافة توجيه بعد انتهاء التأثير البصري
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                window.location.href = 'https://furquanelhoda.github.io/the_key_to_the_future/';
+            }, 100);
+        });
+          // End svg home
         // Chart Configuration
         const ctx = document.getElementById('percentagesChart').getContext('2d');
 
@@ -598,29 +621,7 @@
             sidebar.classList.toggle('active');
         }
         
-          // svg home
-        const homeButton = document.querySelector('.home-button');
-        
-        homeButton.addEventListener('mouseenter', () => {
-            homeButton.style.animation = 'pulse 1s infinite';
-        });
-
-        homeButton.addEventListener('mouseleave', () => {
-            homeButton.style.animation = 'none';
-            void homeButton.offsetWidth;
-        });
-
-        homeButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.style.transform = 'scale(0.95)';
-            
-            // إضافة توجيه بعد انتهاء التأثير البصري
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-                window.location.href = 'https://furquanelhoda.github.io/the_key_to_the_future/';
-            }, 100);
-        });
-          // End svg home
+      
     </script>
 </body>
 </html>
